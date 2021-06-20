@@ -1,0 +1,36 @@
+<script src="js/jquery-2.2.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.min.js"></script>
+<script>
+<% if (typeof system_preferences !== 'undefined' && typeof system_preferences.selected_skin !== 'undefined' && system_preferences.selected_skin !== null && system_preferences.selected_skin !== "") { %>
+var defaultSkinStr='<%= system_preferences.selected_skin %>';
+<% } else { %>
+var defaultSkinStr="skin-blue";
+<% } %>
+</script>
+<script src="js/customize-skins.js"></script>
+
+<script src="plugins/chart/Chart.min.js"></script>
+
+<script>
+  $('.carousel[data-type="multi"] .item').each(function() {
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+  for (var i = 0; i < 2; i++) {
+    next = next.next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+</script>
+
+
+
+

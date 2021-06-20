@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Workstation</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" property="" />
+<!-- js -->
+<script src="../js/main.js"></script>
+<!-- //js -->
+<!-- font-awesome-icons -->
+<link href="../css/font-awesome.css" rel="stylesheet"> 
+ <link rel="stylesheet" type="text/css" href="../css/easy-responsive-tabs.css " />
+ <style>
+ banner-bottom-icons {
+    padding: 1em 0;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    height: 100%;
+    clear: both;
+    width: 96%!important;
+}
+ </style>
+
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Prompt:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
+
+<% include include/dash %>		  
+
+</head>
+<body>
+<!-- banner -->
+	<% include include/banner %>		  
+
+	<div class="header-bottom">
+
+		<% include include/navbar %>		  
+		  
+	</div>
+
+</div>
+</div>
+<div class="col-md-12">	
+	<div class="banner-bottom-icons" STYLE="width:50%;">
+<!--Horizontal Tab-->
+        <div id="parentHorizontalTab">
+            <ul class="resp-tabs-list hor_1">
+                <li>Dashboard</li>
+            </ul>
+            <div class="resp-tabs-container hor_1 content">	
+
+				<div>
+					
+					<div class="container-fluid">
+					
+						<div class="btn-group btn-group-toggle" style="margin-bottom: 1rem">
+							<label class="btn btn-outline-primary active">
+								<input type="radio" name="source" id="confirmed" autocomplete="off"> Confirmed
+							</label>
+							<label class="btn btn-outline-primary">
+								<input type="radio" name="source" id="deaths" autocomplete="off" checked> Deaths
+							</label>
+						</div>
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="card">
+									<div class="card-header" id="map-header">
+									</div>
+									<div class="card-body" id="container"></div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6" id="info">
+								<div class="card">
+									<div class="card-header">
+										<span class="f32"><span id="flag"></span></span>
+										<span class="header-text"></span>
+									</div>
+									<div class="card-header subheader">
+										Click countries to view history
+									</div>
+									<div class="card-body" id="country-chart">
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						<small>This visualization is created by the Highcharts team using <a href="https://www.highcharts.com" target="_top">
+							Highcharts</a> and data from  <a href="https://github.com/pomber/covid19" target="_top">pomber/covid19</a>.</small>
+					</div>
+					
+					
+					
+
+				</div>
+
+				
+				
+
+            </div>
+
+    </div>
+
+		<div class="clearfix"> </div>
+		
+	</div>
+
+<!-- //side content details preview -->
+
+<div CLASS="col-lg-4"><div id="contentPreview">
+</div>
+
+</div>
+
+</div>
+
+	
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="../js/move-top.js"></script>
+<script src="../js/easyResponsiveTabs.js"></script>
+<script type="text/javascript">
+
+function domainCheck(){
+var prodHost = "my.workstation.co.uk";
+var devHost = "localhost";
+var currenturl = window.location.hostname;
+	//alert(currenturl);
+switch(currenturl) {
+  case prodHost:
+    // code block
+    break;
+  case devHost:
+    // code block
+    break;
+  default:
+  $("<span style=font-size:400px;>big problem</span>").replaceAll("body"); // check replaceWith() examples
+}
+
+}
+
+function searchDo(){
+var searchKeyword = $('#searchKeywords').val();
+loadData();
+}
+
+    $(document).ready(function() {
+		domainCheck();
+		//loadData();
+	//load first doc in the contentPreview area
+	//loadDocByURL('/BW3.pdf?1');
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+        
+    });
+</script>
+<script type="text/javascript" src="../js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smooth-scrolling -->
+
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>

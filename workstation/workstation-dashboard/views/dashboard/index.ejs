@@ -1,0 +1,754 @@
+
+
+<% include include/main-header %>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+   <!-- navbar top -->
+   <div class="wrapper">
+      <!-- Header Starts here-->
+      <% include include/header %>
+      <!-- Header Ends here-->
+      <!-- Sidebar Starts Here-->
+      <% include include/sidebar %>
+      <!-- Sidebar Ends Here-->
+      <style type="text/css">
+         .card {
+         box-shadow: 0 0 1px rgba(0,0,0,.125),0 1px 3px rgba(0,0,0,.2);
+         margin-bottom: 1rem;
+         position: relative;
+         display: -webkit-flex;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-flex-direction: column;
+         -ms-flex-direction: column;
+         flex-direction: column;
+         min-width: 0;
+         word-wrap: break-word;
+         background-color: #fff;
+         background-clip: border-box;
+         border: 0 solid rgba(0,0,0,.125);
+         border-radius: .25rem;
+         margin-bottom: 30px;
+         }
+         .card-header {
+         background-color: transparent;
+         border-bottom: 1px solid rgba(0,0,0,.125);
+         padding: 10px;
+         position: relative;
+         border-top-left-radius: .25rem;
+         border-top-right-radius: .25rem;
+         margin-bottom: 18px;
+         }
+         .card-primary:not(.card-outline) > .card-header {
+         background-color: transparent;
+         }
+         .card-title {
+         float: left;
+         font-size: 17px;
+         font-weight: 400;
+         margin: 0;
+         margin-bottom: 0;
+         color: #545b64;
+         }
+         .card-header > .card-tools {
+         float: right;
+         margin-right: -.625rem;
+         }
+         .card-body::after, .card-footer::after, .card-header::after {
+         display: block;
+         clear: both;
+         content: "";
+         }
+         .MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+         .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+         .MultiCarousel .MultiCarousel-inner .item { float: left;}
+         .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+         .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+         .MultiCarousel .leftLst { left:0; }
+         .MultiCarousel .rightLst { right:0; }
+         .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+      </style>
+      <div class="content-wrapper">
+         <!-- Content Header (Page header) -->
+         <section class="content-header">
+            <h1>
+               Dashboard
+               <small>Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+               <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+            </ol>
+         </section>
+         <!-- Main content -->
+         <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row" id="dashboard_items">
+              <!--  <h1 style="margin-left:20px;">Welcome to Control Panel</h1> -->
+            </div>
+
+
+
+             <div class="homedashboardblk">
+
+                 
+
+
+
+
+
+            </div>   
+
+
+
+           
+           <!--   <div class="row">
+               <div class="col-md-12">
+                  <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                     <div class="MultiCarousel-inner">
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                        <div class="item">
+                           <div class="small-box bg-green">
+                              <div class="inner">
+                                 <h3 class="users_count">4</h3>
+                                 <p>USERS</p>
+                              </div>
+                              <div class="icon">  <i class="fa fa-user"></i></div>
+                              <a href="/dashboard/list/users" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                     <button class="btn btn-primary leftLst"><</button>
+                     <button class="btn btn-primary rightLst">></button>
+                  </div>
+               </div>
+            </div>  -->
+            <!--  <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="4000">
+               <div class="carousel-inner">
+                 
+               
+               </div>
+               
+                     <div class="left carousel-control">
+                 <a href="#carousel" role="button" data-slide="prev">
+                   <span class="" aria-hidden="true"><i class="fa fa-arrow-circle-o-left"></i></span>
+                   <span class="sr-only">Previous</span>
+                 </a>
+               </div>
+               <div class="right carousel-control">
+                 <a href="#carousel" role="button" data-slide="next">
+                   <span class="" aria-hidden="true"><i class="fa fa-arrow-circle-o-right"></i></span>
+                   <span class="sr-only">Next</span>
+                 </a>
+               </div>
+               </div> -->
+            <!-- /.row -->
+            <!-- Main row -->
+            <!-- /.row (main row) -->
+
+
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-6">
+                     <!-- AREA CHART -->
+                     <div class="card card-primary">
+                        <div class="card-header">
+                           <h3 class="card-title">Area Chart</h3>
+                        </div>
+                        <div class="card-body">
+                           <div class="chart">
+                              <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                           </div>
+                        </div>
+                        <!-- /.card-body -->
+                     </div>
+                     <!-- /.card -->
+                     <!-- DONUT CHART -->
+                     <div class="card card-primary">
+                        <div class="card-header">
+                           <h3 class="card-title">Donut Chart</h3>
+                        </div>
+                        <div class="card-body">
+                           <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                     </div>
+                     <!-- /.card -->
+                     <!-- PIE CHART -->
+                     <div class="card card-primary">
+                        <div class="card-header">
+                           <h3 class="card-title">Pie Chart</h3>
+                        </div>
+                        <div class="card-body">
+                           <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                     </div>
+                     <!-- /.card -->
+                  </div>
+                  <!-- /.col (LEFT) -->
+                  <div class="col-md-6">
+                     <!-- LINE CHART -->
+                     <div class="card card-primary">
+                        <div class="card-header">
+                           <h3 class="card-title">Line Chart</h3>
+                        </div>
+                        <div class="card-body">
+                           <div class="chart">
+                              <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                           </div>
+                        </div>
+                        <!-- /.card-body -->
+                     </div>
+                     <!-- /.card -->
+                     <!-- BAR CHART -->
+                     <div class="card card-primary">
+                        <div class="card-header">
+                           <h3 class="card-title">Bar Chart</h3>
+                        </div>
+                        <div class="card-body">
+                           <div class="chart">
+                              <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                           </div>
+                        </div>
+                        <!-- /.card-body -->
+                     </div>
+                     <!-- /.card -->
+                     <!-- STACKED BAR CHART -->
+                     <div class="card card-primary">
+                        <div class="card-header">
+                           <h3 class="card-title">Stacked Bar Chart</h3>
+                        </div>
+                        <div class="card-body">
+                           <div class="chart">
+                              <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                           </div>
+                        </div>
+                        <!-- /.card-body -->
+                     </div>
+                     <!-- /.card -->
+                  </div>
+                  <!-- /.col (RIGHT) -->
+               </div>
+               <!-- /.row -->
+            </div>
+         </section>
+       
+      </div>
+      <!--//body content--> 
+      <!--//Main Content--> 
+      <!-- Footer Starts Here-->
+      <% include include/footer %>
+      <!-- Footer Ends Here-->
+   </div>
+   <script>
+   function fetchDashboardItems(){
+        var jsonRow = backendDirectory+'/load_navigator';
+        $.getJSON(jsonRow,function(result){
+          if(result.aaData){
+            var contentStr ="", tableArr= new Array();
+            var styleClassArr=new Array("bg-blue", "bg-yellow", "bg-red", "bg-green");
+            
+            var count = 1
+            $.each(result.aaData, function(i,row){
+              if(row.displayOnDashboard==1 || row.displayOnDashboard=="1"){
+              if(count <= 8){
+              var iconNameStr='';
+              contentStr+= '<div class="col-md-3"><div class="dashbrdblkmain"><div class="dashbrdlft"><div class="dashbrdusrname">'
+              // if(row.icon_class!=""){
+              //   iconNameStr='<i class="'+row.icon_class+'"></i>';
+              // }
+              // if(row.icon_path!=""){
+              //   iconNameStr='<img width="24" height="24" src="'+row.icon_path+'" alt="">';
+              // }
+      
+              if(row.name.toLowerCase()=="players"){
+                   contentStr+= '<h3><a href="#">'+row.name.toUpperCase()+' <span class="players_count">(0)</span></a></h3>'
+                   // contentStr+='<div class="inner"><h3 class="players_count">0</h3><p>'+row.name.toUpperCase()+'</p></div>';
+                   tableArr.push('players');
+                 }else{
+                  contentStr+= '<h3><a href="<%= backendDirectory %>/list/'+row.table+'">'+row.name.toUpperCase()+' <span class="'+row.table+'_count">(0)</span></a></h3>'
+                   // contentStr+='<div class="inner"><h3 class="'+row.table+'_count">0</h3><p>'+row.name.toUpperCase()+'</p></div>';
+                   tableArr.push(row.table);
+                 }
+                 contentStr+= '</div>'
+                 // contentStr+='<div class="icon"> '+iconNameStr+'</div>';
+                 contentStr+='<div class="dashbrdmrinfo">';
+                  contentStr+= '<a href="<%= backendDirectory %>/list/'+row.table+'"> View all '+row.name.toLowerCase()+' <i class="fa fa-arrow-circle-right"></i></a></div></div>'
+                  
+                 // contentStr+='<a href="<%= backendDirectory %>/list/'+row.table+'" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>';
+                 // contentStr+='</div></div>';
+
+                 contentStr+= '<div class="dashbrdrght"><div class="totalcountboard"><p><i class="'+row.icon_class+'"></i></p></div></div></div></div>'
+                 count += 1
+               }
+              }
+            });
+            $(".homedashboardblk").html(contentStr);
+            
+            $.each(tableArr, function(i,row){
+              loadCollectionCount(row);
+            });
+          }
+        });
+      }
+
+
+      function loadCollectionCount(collectionStr){
+        var jsonRow = backendDirectory+'/api_get_count?collection='+collectionStr;
+        $.getJSON(jsonRow,function(result){
+          if(result.total){
+            $("."+collectionStr+"_count").html("("+result.total+")");
+          }
+        });
+      }
+
+      // function fetchDashboardItems(){
+      //   var jsonRow = backendDirectory+'/load_navigator';
+      //   var flag = true
+      //   $.getJSON(jsonRow,function(result){
+      //     if(result.aaData){
+      //       var contentStr ="", tableArr= new Array();
+      //       var styleClassArr=new Array("bg-blue", "bg-yellow", "bg-red", "bg-green");
+            
+      //       $.each(result.aaData, function(i,row){
+      //         if(row.displayOnDashboard==1 || row.displayOnDashboard=="1"){
+              
+      //         var iconNameStr='';
+      //         contentStr+= '<div class="item'
+      //         if(flag == true){
+      //           contentStr+= ' active'
+      //           flag = false
+      //         }
+      //         contentStr+= '" style="width: 228px;">'
+      //         if(row.icon_class!=""){
+      //           iconNameStr='<i class="'+row.icon_class+'"></i>';
+      //         }
+      //         if(row.icon_path!=""){
+      //           iconNameStr='<img width="24" height="24" src="'+row.icon_path+'" alt="">';
+      //         }
+      
+      
+      //         var styleItem = styleClassArr[Math.floor(Math.random()*styleClassArr.length)];
+      //         contentStr+='<div class="small-box '+styleItem+'">';
+      //         // contentStr+='<div class="col-lg-3 col-xs-6"><div class="small-box '+styleItem+'">';
+              
+      //         if(row.name.toLowerCase()=="players"){
+      //           contentStr+='<div class="inner"><h3 class="players_count">0</h3><p>'+row.name.toUpperCase()+'</p></div>';
+      //           tableArr.push('players');
+      //               }else{
+      //                 contentStr+='<div class="inner"><h3 class="'+row.table+'_count">0</h3><p>'+row.name.toUpperCase()+'</p></div>';
+      //                 tableArr.push(row.table);
+      //               }
+      //               contentStr+='<div class="icon"> '+iconNameStr+'</div>';
+      //               contentStr+='<a href="<%= backendDirectory %>/list/'+row.table+'" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>';
+      //               contentStr+='</div></div></div>';
+      //               }
+      //       });
+      //       $(".MultiCarousel-inner").html(contentStr);
+            
+      //       $.each(tableArr, function(i,row){
+      //         loadCollectionCount(row);
+      //       });
+      //     }
+      //   });
+      // }
+      
+      
+      // function loadCollectionCount(collectionStr){
+      //   var jsonRow = backendDirectory+'/api_get_count?collection='+collectionStr;
+      //   $.getJSON(jsonRow,function(result){
+      //     if(result.total){
+      //       $("."+collectionStr+"_count").html(result.total);
+      //     }
+      //   });
+      // }
+      $(function () {
+        fetchDashboardItems();
+      });
+   </script>
+   <script type="text/javascript">
+      $(document).ready(function () {
+        var itemsMainDiv = ('.MultiCarousel');
+        var itemsDiv = ('.MultiCarousel-inner');
+        var itemWidth = "";
+      
+        $('.leftLst, .rightLst').click(function () {
+            var condition = $(this).hasClass("leftLst");
+            if (condition)
+                click(0, this);
+            else
+                click(1, this)
+        });
+        ResCarouselSize();
+      
+        $(window).resize(function () {
+            ResCarouselSize();
+        });
+      
+        //this function define the size of the items
+        function ResCarouselSize() {
+            var incno = 0;
+            var dataItems = ("data-items");
+            var itemClass = ('.item');
+            var id = 0;
+            var btnParentSb = '';
+            var itemsSplit = '';
+            var sampwidth = $(itemsMainDiv).width();
+            var bodyWidth = $('body').width();
+            $(itemsDiv).each(function () {
+                id = id + 1;
+                var itemNumbers = $(this).find(itemClass).length;
+                btnParentSb = $(this).parent().attr(dataItems);
+                itemsSplit = btnParentSb.split(',');
+                $(this).parent().attr("id", "MultiCarousel" + id);
+      
+      
+                if (bodyWidth >= 1200) {
+                    incno = itemsSplit[3];
+                    itemWidth = sampwidth / incno;
+                }
+                else if (bodyWidth >= 992) {
+                    incno = itemsSplit[2];
+                    itemWidth = sampwidth / incno;
+                }
+                else if (bodyWidth >= 768) {
+                    incno = itemsSplit[1];
+                    itemWidth = sampwidth / incno;
+                }
+                else {
+                    incno = itemsSplit[0];
+                    itemWidth = sampwidth / incno;
+                }
+                // console.log("itemWidth",itemWidth)
+                // console.log("itemNumbers",itemNumbers)
+                // $(".item").css({'width': itemWidth+"px" });
+                $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+                $(this).find(itemClass).each(function () {
+                    $(this).outerWidth(itemWidth);
+                });
+      
+                $(".leftLst").addClass("over");
+                $(".rightLst").removeClass("over");
+      
+            });
+        }
+      
+      
+        //this function used to move the items
+        function ResCarousel(e, el, s) {
+            var leftBtn = ('.leftLst');
+            var rightBtn = ('.rightLst');
+            var translateXval = '';
+            var divStyle = $(el + ' ' + itemsDiv).css('transform');
+            var values = divStyle.match(/-?[\d\.]+/g);
+            var xds = Math.abs(values[4]);
+            if (e == 0) {
+                translateXval = parseInt(xds) - parseInt(itemWidth * s);
+                $(el + ' ' + rightBtn).removeClass("over");
+      
+                if (translateXval <= itemWidth / 2) {
+                    translateXval = 0;
+                    $(el + ' ' + leftBtn).addClass("over");
+                }
+            }
+            else if (e == 1) {
+                var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+                translateXval = parseInt(xds) + parseInt(itemWidth * s);
+                $(el + ' ' + leftBtn).removeClass("over");
+      
+                if (translateXval >= itemsCondition - itemWidth / 2) {
+                    translateXval = itemsCondition;
+                    $(el + ' ' + rightBtn).addClass("over");
+                }
+            }
+            $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+        }
+      
+        //It is used to get some elements from btn
+        function click(ell, ee) {
+            var Parent = "#" + $(ee).parent().attr("id");
+            var slide = $(Parent).attr("data-slide");
+            ResCarousel(ell, Parent, slide);
+        }
+      
+      });
+   </script>
+   <script>
+      $(function () {
+       
+        var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+      
+        var areaChartData = {
+          labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          datasets: [
+            {
+              label               : 'Digital Goods',
+              backgroundColor     : 'rgba(60,141,188,0.9)',
+              borderColor         : 'rgba(60,141,188,0.8)',
+              pointRadius          : false,
+              pointColor          : '#3b8bba',
+              pointStrokeColor    : 'rgba(60,141,188,1)',
+              pointHighlightFill  : '#fff',
+              pointHighlightStroke: 'rgba(60,141,188,1)',
+              data                : [28, 48, 40, 19, 86, 27, 90]
+            },
+            {
+              label               : 'Electronics',
+              backgroundColor     : 'rgba(210, 214, 222, 1)',
+              borderColor         : 'rgba(210, 214, 222, 1)',
+              pointRadius         : false,
+              pointColor          : 'rgba(210, 214, 222, 1)',
+              pointStrokeColor    : '#c1c7d1',
+              pointHighlightFill  : '#fff',
+              pointHighlightStroke: 'rgba(220,220,220,1)',
+              data                : [65, 59, 80, 81, 56, 55, 40]
+            },
+          ]
+        }
+      
+        var areaChartOptions = {
+          maintainAspectRatio : false,
+          responsive : true,
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              gridLines : {
+                display : false,
+              }
+            }],
+            yAxes: [{
+              gridLines : {
+                display : false,
+              }
+            }]
+          }
+        }
+      
+        // This will get the first returned node in the jQuery collection.
+        new Chart(areaChartCanvas, {
+          type: 'line',
+          data: areaChartData,
+          options: areaChartOptions
+        })
+      
+        //-------------
+        //- LINE CHART -
+        //--------------
+        var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+        var lineChartOptions = $.extend(true, {}, areaChartOptions)
+        var lineChartData = $.extend(true, {}, areaChartData)
+        lineChartData.datasets[0].fill = false;
+        lineChartData.datasets[1].fill = false;
+        lineChartOptions.datasetFill = false
+      
+        var lineChart = new Chart(lineChartCanvas, {
+          type: 'line',
+          data: lineChartData,
+          options: lineChartOptions
+        })
+      
+        //-------------
+        //- DONUT CHART -
+        //-------------
+        // Get context with jQuery - using jQuery's .get() method.
+        var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+        var donutData        = {
+          labels: [
+              'Chrome',
+              'IE',
+              'FireFox',
+              'Safari',
+              'Opera',
+              'Navigator',
+          ],
+          datasets: [
+            {
+              data: [700,500,400,600,300,100],
+              backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+            }
+          ]
+        }
+        var donutOptions     = {
+          maintainAspectRatio : false,
+          responsive : true,
+        }
+        //Create pie or douhnut chart
+        // You can switch between pie and douhnut using the method below.
+        new Chart(donutChartCanvas, {
+          type: 'doughnut',
+          data: donutData,
+          options: donutOptions
+        })
+      
+        //-------------
+        //- PIE CHART -
+        //-------------
+        // Get context with jQuery - using jQuery's .get() method.
+        var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+        var pieData        = donutData;
+        var pieOptions     = {
+          maintainAspectRatio : false,
+          responsive : true,
+        }
+        //Create pie or douhnut chart
+        // You can switch between pie and douhnut using the method below.
+        new Chart(pieChartCanvas, {
+          type: 'pie',
+          data: pieData,
+          options: pieOptions
+        })
+      
+        //-------------
+        //- BAR CHART -
+        //-------------
+        var barChartCanvas = $('#barChart').get(0).getContext('2d')
+        var barChartData = $.extend(true, {}, areaChartData)
+        var temp0 = areaChartData.datasets[0]
+        var temp1 = areaChartData.datasets[1]
+        barChartData.datasets[0] = temp1
+        barChartData.datasets[1] = temp0
+      
+        var barChartOptions = {
+          responsive              : true,
+          maintainAspectRatio     : false,
+          datasetFill             : false
+        }
+      
+        new Chart(barChartCanvas, {
+          type: 'bar',
+          data: barChartData,
+          options: barChartOptions
+        })
+      
+        //---------------------
+        //- STACKED BAR CHART -
+        //---------------------
+        var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
+        var stackedBarChartData = $.extend(true, {}, barChartData)
+      
+        var stackedBarChartOptions = {
+          responsive              : true,
+          maintainAspectRatio     : false,
+          scales: {
+            xAxes: [{
+              stacked: true,
+            }],
+            yAxes: [{
+              stacked: true
+            }]
+          }
+        }
+      
+        new Chart(stackedBarChartCanvas, {
+          type: 'bar',
+          data: stackedBarChartData,
+          options: stackedBarChartOptions
+        })
+      })
+   </script>
+</body>
+</html>
+

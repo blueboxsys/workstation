@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"jobshout_live.vacancies"},{"v":1,"key":{"Document":1,"Body":1},"name":"Document_1_Body_1","ns":"jobshout_live.vacancies"}]}

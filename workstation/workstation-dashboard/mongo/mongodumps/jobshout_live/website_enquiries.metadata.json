@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"jobshout_live.website_enquiries"}],"uuid":"fd111fd6ca7043148dcc9f597455072f"}

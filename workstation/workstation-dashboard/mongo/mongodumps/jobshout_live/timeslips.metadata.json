@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"jobshout_live.timeslips"},{"v":{"$numberInt":"2"},"key":{"task_name":{"$numberInt":"1"},"reported_by":{"$numberInt":"1"},"description":{"$numberInt":"1"}},"name":"task_name_1_reported_by_1_description_1","ns":"jobshout_live.timeslips"}],"uuid":"99abd68a075e445f8ed09cd03afbe092"}

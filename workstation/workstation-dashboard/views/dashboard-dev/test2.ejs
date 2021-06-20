@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	</head>
+    <body>
+<div class="container">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <!-- Navbar content -->
+        <a class="navbar-brand" href="#">Contacts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Customers <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Leads</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Invoices</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+<div class="table-responsive">
+
+	<!-- Table -->
+	<table id="customers_table" class="table table-bordered table-striped" style="width:100%">
+
+	<thead>
+	  <tr>
+		<th>Name</th>
+		<th>Active</th>
+		<th>Contact email</th>
+		<th>Website</th>
+	  </tr>
+	</thead>
+  
+  </table>
+
+	
+</div>
+</div>
+
+<script type="text/javascript">
+
+var collection = "customers";
+
+var theAPI = "api_fetch_list?start=0&limit=100&templateStr=" + collection;
+
+$.getJSON(theAPI, function(data) {
+    // Get the element with id summary and set the inner text to the result.
+
+    // view the data in the console
+    console.log(data);
+
+    $('#eventType').html("Name of collection: " + collection);
+    
+    $('#eventCount').html("There are <strong>" + data.aaData.length + "</strong> entries");
+
+    $('#event1').html(data.aaData[0]._id + ": " + data.aaData[0].name + ", count: " +data.total);
+    $('#event2_loc').html(data.aaData[1].name);
+    
+	// add json data received into table
+	var customers_data = '';
+    for(var i = 0; i < data.aaData.length; i++) {
+        var obj = data.aaData[i];
+		//console.log(obj._id);
+		customers_data += '<tr>';
+			customers_data += '<td>'+obj.name+'</td>';
+			customers_data += '<td>'+obj.active+'</td>';
+			customers_data += '<td>'+obj.contact_email+'</td>';
+			customers_data += '<td>'+obj.website+'</td>';
+		customers_data += '</tr>';
+	}
+	$("#customers_table").append(customers_data);
+});
+
+
+
+
+</script>
+
+    </body>
+    </html>

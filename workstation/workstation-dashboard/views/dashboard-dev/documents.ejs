@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Workstation</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); }
+		//specific to customers functions here
+		function loadData(){
+    var collection = "documents";
+    
+    var theAPI = "api_fetch_list?start=0&limit=20&templateStr=" + collection + "&s=" + $('#searchKeywords').val();
+    
+    $.getJSON(theAPI, function(data) {
+        // Get the element with id summary and set the inner text to the result.
+        //view the data in the console
+        //console.log(data);
+    /* 
+        $('#eventType').html("Name of collection: " + collection);
+        
+        $('#eventCount').html("There are <strong>" + data.aaData.length + "</strong> entries");
+    
+        $('#event1').html(data.aaData[0]._id + ": " + data.aaData[0].name + ", count: " +data.total);
+        $('#event2_loc').html(data.aaData[1].name);
+    */
+    
+        // add json data received into table
+        var list_data = '<thead>';
+        list_data += '<tr>';
+        list_data += '<th>Name</th>';
+        list_data += '<th>Active</th>';
+        list_data += '<th>Type</th>';
+        list_data += '<th>Code</th>';
+        list_data += '</tr>';
+        list_data += '</thead>';
+    
+        if (data.aaData && data.aaData.length > 0) {
+			var firstRowCode = '';
+        for(var i = 0; i < data.aaData.length; i++) {
+            var obj = data.aaData[i];
+			//console.log(obj._id);
+			if (firstRowCode == ''){
+			firstRowCode = obj.Code;
+			}
+            list_data += '<tr>';
+			list_data += '<td>'+obj.Document+'</td>';
+			if(obj.status == "1")
+			{
+            list_data += '<td>Active</td>';
+			} else {
+			list_data += '<td>Archived</td>';
+			}
+			list_data += '<td>'+obj.Type+'</td>';
+            list_data += '<td>'+obj.Code+'</td>';
+            list_data += '</tr>';
+		}
+		
+		if (firstRowCode != ''){
+			loadDocByURL('/BW3.pdf?1');
+		}
+		
+		} else {
+    
+            $("#documents_table").empty();
+        }
+    //console.log(list_data);
+        $("#documents_table").empty().html(list_data);
+    });
+    
+    }
+//specific to customers functions here		
+		</script>
+<!-- //custom-theme -->
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" property="" />
+<!-- js -->
+<script src="../js/main.js"></script>
+<!-- //js -->
+<!-- font-awesome-icons -->
+<link href="../css/font-awesome.css" rel="stylesheet"> 
+ <link rel="stylesheet" type="text/css" href="../css/easy-responsive-tabs.css " />
+ <style>
+ banner-bottom-icons {
+    padding: 1em 0;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    height: 100%;
+    clear: both;
+    width: 96%!important;
+}
+ </style>
+
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Prompt:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
+</head>
+<body>
+<!-- banner -->
+<% include include/banner %>		  
+
+	<div class="header-bottom">
+
+		<% include include/navbar %>		  
+		  
+	</div>
+
+</div>
+</div>
+<div class="col-md-12 col-sm-8">	
+	<div class="banner-bottom-icons" STYLE="width:60%;">
+<!--Horizontal Tab-->
+        <div id="parentHorizontalTab">
+            <ul class="resp-tabs-list hor_1">
+                <li>All Documents</li>
+                <li>My Documents</li>
+            </ul>
+            <div class="resp-tabs-container hor_1 content">	
+
+				<div>
+					<h2 >Documents</h2>
+					<div class="table-responsive">
+
+						<!-- Table -->
+						<table id="documents_table" class="table table-bordered table-striped" style="width:100%">
+										  
+					    </table>
+					
+						
+					</div>
+				
+				</div>
+
+<div>
+	<h2 >My Documents</h2>
+
+</div>
+            </div>
+
+    </div>
+
+		<div class="clearfix"> </div>
+		
+	</div>
+
+<!-- //banner-bottom-icons -->
+
+<div CLASS="col-lg-4"><div id="contentPreview">
+</div>
+
+</div>
+
+</div>
+
+	
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="../js/move-top.js"></script>
+<script src="../js/easyResponsiveTabs.js"></script>
+<script type="text/javascript" src="../js/easing.js"></script>
+<script src="js/init.js"></script>
+
+<!-- //here ends scrolling icon -->
+</body>
+</html>
