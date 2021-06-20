@@ -26,4 +26,4 @@ nodemon ./server.js
 
 Now goto views directory and look for dashboard-dev folder and start with index.ejs and list/ folder and other node.js files to see how the Workstation Control Panel Dasboard works!
 
-
+#This project has been cloned from github.com/bwalia/workstation. 
