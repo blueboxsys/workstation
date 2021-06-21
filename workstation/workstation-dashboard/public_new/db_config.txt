@@ -1,4 +1,0 @@
-name: project_database
-user: web_user
-password: secret
-
